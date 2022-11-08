@@ -1,0 +1,79 @@
+﻿@model TestFrondEnd.Models.formClass
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .myform {
+            border: 2px outset black;
+            background-color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .myforma {
+            font-size: large;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Form</title>
+</head>
+<body>
+    <div class="myform">
+        <h1 class="display-4">Test form</h1>
+
+        <form asp-action="InsertData" method="post">
+            <div class="myforma">
+                <label asp-for="AgreementNumber" class="control-label">Agreement Number:</label>
+                <input asp-for="AgreementNumber" />
+            </div>
+            <div class="myforma">
+                <label asp-for="BranchId" class="">Branch Id:</label>
+                <input asp-for="BranchId" />
+            </div>
+
+            <div class="myforma">
+                <label asp-for="BpkbNo" class="">No Bpkb:</label>
+                <input asp-for="BpkbNo" />
+            </div>
+            <div class="myforma">
+                <label asp-for="BpkbDateIn" class="">Tanggal BPKB In:</label>
+                <input asp-for="BpkbDateIn" />
+            </div>
+            <div class="myforma">
+                <label asp-for="BpkbDate" class="">Tanggal BPKB :</label>
+                <input asp-for="BpkbDate" />
+            </div>
+            <div class="myforma">
+                <label asp-for="FakturNo" class="">No Faktur:</label>
+                <input asp-for="FakturNo" />
+            </div>
+            <div class="myforma">
+                <label asp-for="FakturDate" class="">Tanggal Faktur:</label>
+                <input asp-for="FakturDate" />
+            </div>
+            <div class="myforma">
+                <label asp-for="PoliceNo" class="">No Polisi:</label>
+                <input asp-for="PoliceNo" />
+            </div>
+            <div class="myforma">
+                <label asp-for="LocationId" class="">Location:</label>
+                <select class="form-control" asp-for="LocationId" asp-items="@(new SelectList(ViewBag.test, "locationId", "locationName"))">
+                    <option value="">--Select--</option>
+                </select>
+                <input type="hidden" asp-for="LocationId" />
+            </div>
+            <div>
+                <p></p>
+                <button type="submit">Save</button>
+                <p></p>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
